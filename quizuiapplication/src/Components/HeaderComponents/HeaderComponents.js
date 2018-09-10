@@ -17,7 +17,6 @@ class HeaderComponent extends Component {
 
 function mapStateToProps(state) {
     console.log('state in header', state);
-     console.log('state in header ===========>');
     return {
         token: state.login.token,
         jdListError: state.jdList.error,
