@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Provider } from 'react-redux';
+import Main from './Containers/Main/Main';
+import configureStore from './AppStore'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+const store = configureStore()
+
+class App extends React.Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <div className="container-fluid">
+                    <Main />
+                </div>
+            </Provider>
+        )
+    }
 }
 
-export default App;
+export default App
