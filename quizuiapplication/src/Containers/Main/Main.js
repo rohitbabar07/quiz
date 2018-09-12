@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router';
-import LoginComponent from '../../Components/loginComponent/LoginComponent';
+import LoginComponent from '../../Components/LoginComponent/LoginComponent';
 import { LOGIN_REDIRECT_URL  } from './../../Constants/AppConstants';
 
 
@@ -18,7 +18,7 @@ export default class Main extends React.Component {
         const template =
             !this.props.hasUserLogedIn
                 ? (
-                    <Route path="/*" render={(props) => <LoginComponent />}/> 
+                    <Route path="/" render={(props) => <LoginComponent />}/> 
                 ) : (
                     <span>After login </span>
                 )
@@ -29,9 +29,5 @@ export default class Main extends React.Component {
             </div>
         )
     }
-}
-
-function mapStateToProps(state) {
-    
 }
 
