@@ -11,7 +11,7 @@ class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <div className="container-fluid">
+                <div >
                     <Main />
                 </div>
             </Provider>
