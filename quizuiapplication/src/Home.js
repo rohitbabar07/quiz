@@ -8,7 +8,6 @@ class Home extends React.Component {
         const rootPath = "/"; 
         return (
             <div className="container-fluid">
-                <Header/>
             <Switch>
                 <Route path={rootPath} component={App}/>
             </Switch>

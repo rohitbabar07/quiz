@@ -5,15 +5,16 @@ import { LOGIN_REDIRECT_URL } from './../../Constants/AppConstants';
 import Temp from '../../Components/Temp';
 import Loading from '../../Components/Loader/Loading';
 import NotFound from '../../Components/NotFound';
+import { connect } from 'react-redux';
 
 
-export default class Main extends React.Component {
+class Main extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
             error: false,
-            hasUserLogedIn: false,
+            hasUserLogIn: false,
             dataFetched: false,
             isFetching: false,
         }
@@ -21,13 +22,13 @@ export default class Main extends React.Component {
 
     render() {
         const template =
-            !this.props.hasUserLogedIn
+            !this.props.hasUserLogIn
                 ? (
                     <Route path="/" render={(props) => <LoginComponent />} />
                 ) : ( this.props.isFetching 
                         ? <Loading />
                     :(
-                        (this.props.dataFetched &&  this.props.response.access_token)
+                        (this.props.hasUserLogIn)
                          ? <Temp />
                          :<NotFound/>
                     )
@@ -41,3 +42,13 @@ export default class Main extends React.Component {
     }
 }
 
+
+function mapStateToProps(state) {
+    return {
+        hasUserLogIn : state.LoginReducer.hasUserLogIn,
+        isFetching: state.LoginReducer.isFetching,
+        
+    }
+}
+
+export default connect(mapStateToProps) (Main);
