@@ -14,7 +14,9 @@ class SingInInstruction extends React.Component {
                         <span className="col-sm-12 mr-10" style={{ fontWeight: 'bold', fontSize: 16, textAlign: " center" }}> Sign in to </span>
                     </div>
                 )
-                : (<div />
+                : ( <div className="row" style={{ backgroundColor: '#F1F1F1', height: 32, alignItems: 'center' }}>
+                    <span className="col-sm-12 mr-10" style={{ fontWeight: 'bold', fontSize: 16, textAlign: " center" }}> hiii </span>
+                    </div>
                 )
         return (
             <div>
@@ -26,7 +28,7 @@ class SingInInstruction extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        hasuserLogin :  state.LoginReducer.hasUserLogIn
+        hasuserLogin :  state.LoginReducer.hasUserLogIn     
     }
 }
 

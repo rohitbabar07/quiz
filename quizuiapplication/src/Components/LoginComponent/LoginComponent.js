@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchToken } from './Action';
 import { withRouter, Link } from "react-router-dom";
 import ErrorComponent from '../LoginFailed/LoginError';
-import './Login.css'
+import './login.css';
 class LoginComponent extends React.Component {
 
 

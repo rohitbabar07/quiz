@@ -1,0 +1,40 @@
+/* CSS for Show Quiz Info. regarding that JD if Quiz is not present */
+
+.quizImage {
+    background:no-repeat center center fixed;
+    height: 176px;
+    display: inline-block;
+    margin-top: 40px;
+    }
+    .marginEmptyMsgCheck{
+    margin-bottom: 25px;
+    }
+    .jdNameSize{
+    font-size: 25px;
+    background: -webkit-linear-gradient(#686fc7, #92e6ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #45ccea80;
+    }
+    
+    /* CSS for Create Quiz using question bank Btn */
+    
+    .createQuizBtnSize{
+        width: 375.813px;
+        height:38px;
+    }
+    
+    /* CSS for Or text of create quiz selection*/
+    
+    .marginForOrOption{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    
+    /* CSS for row testing */
+    .rowOne{
+    background-color: rgb(207, 209, 203);
+    }
+    .rowTwo{
+    background-color: rgb(30, 96, 99);
+    }
+    
