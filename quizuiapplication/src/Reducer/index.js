@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
+import LoginReducer from './MainReducer';
+import UserJobs from './UserJobs';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  LoginReducer,
+  UserJobs
 });
-export default rootReducer;
+export default rootReducer
