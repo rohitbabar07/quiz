@@ -11,7 +11,8 @@ class LoginComponent extends React.Component {
         super(props);
         this.state = {
             userName: '',
-            passWord: ''
+            passWord: '',
+            isloading: this.props.clickedLogin
         }
     }
 
@@ -22,6 +23,14 @@ class LoginComponent extends React.Component {
             "password": this.state.passWord
         }
         this.props.fetchToken(bodyJson);
+    }
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.clickedLogin) {
+            this.setState({
+                isloading: newProps.clickedLogin
+            });
+        }
     }
 
     render() {
@@ -59,10 +68,10 @@ class LoginComponent extends React.Component {
 
                             <small className=" mb-1 mt-1"><Link to={`#`}>Forget Password?</Link></small>
                             <button type="submit"
-                                    style={{ fontWeight: 'bold', marginTop: 10 }}
-                                    className="btn btn-primary btn-block"
-                                    onClick={(event) => this.handleClick(event)}>
-                                    { <i class="fa fa-spinner fa-spin"></i> &&  this.props.clickedLogin}
+                                style={{ fontWeight: 'bold', marginTop: 10 }}
+                                className="btn btn-primary btn-block"
+                                onClick={(event) => this.handleClick(event)}>
+                                { this.state.isloading && <i class="fa fa-spinner fa-spin"></i>}
                                 Login
                             </button>
 
