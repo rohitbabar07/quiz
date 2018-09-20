@@ -41,8 +41,8 @@ export default class JdInDropDown extends Component {
                 <div className="col-md-6 jdAlignRigt">
                     <span className="jdLablePadd">Job Description</span>
                     <span>
-                        <select value={this.state.jdName} id="selectJobs" className="selectpicker btn btn-labeled btn-start selectId jdSelectBoxMargin ">
-                            <option value="">Select The Job</option>
+                        <select value={this.state.jdName} id="selectJob" className="selectpicker btn btn-labeled btn-start selectId jdSelectBoxMargin ">
+                            <option disabled selected value>None Selected</option>
                             {this.listOfJd(this.state.jobs)}
                         </select>
                     </span>

@@ -15,6 +15,7 @@ export function getLoginDetails(dispatch, bodyjson) {
     generateToken(bodyjson)
         .then((response) => {
             if (response.status === 200) {
+                localStorage.setItem('user',bodyjson.username);
                 dispatch(sendToken(response.payload))
                 dispatch(fetchUserJd(response.payload.access_token));
             }
