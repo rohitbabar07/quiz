@@ -28,7 +28,6 @@ export default class JdInDropDown extends Component {
         else {
             return jdList.content.map((jd) =>
                 <option key={jd.id} value={jd.id}>{jd.jdName} </option>
-
             );
         }
     }
@@ -36,9 +35,9 @@ export default class JdInDropDown extends Component {
     render() {
         return (
             <div className="row rez-header-row">
-                <div className="col-md-3"></div>
-                <div className="col-md-3"></div>
-                <div className="col-md-6 jdAlignRigt">
+                <div className="col-md-4"></div>
+                <div className="col-md-4 justify-content-center align-self-center " style={{textAlign:'center'}}><span className="border-bottom border-dark" style={{fontSize:'12px'}}>All Changes are saved on rezoomex cloud</span></div>
+                <div className="col-md-4 jdAlignRigt">
                     <span className="jdLablePadd">Job Description</span>
                     <span>
                         <select value={this.state.jdName} id="selectJob" className="selectpicker btn btn-labeled btn-start selectId jdSelectBoxMargin ">

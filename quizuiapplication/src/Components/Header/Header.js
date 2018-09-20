@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Header.css';
 import rezoomex_logo from '../../assets/images/rezoomex_logo.png';
-import { Link } from 'react-router-dom';
 import HeaderRight from './HeaderRight';
 import HeaderCenter from './HeaderCenter';
 import SignInInstruction from './SingInInstruction';
@@ -19,8 +18,8 @@ class Header extends Component {
         return (
             <div >
                 <div>
-                    <nav className="navbar navbar-dark head" >
-                    <div className=" mb-1 ml-4 pb-1">
+                    <nav className="navbar navbar-dark head justify-content-between" >
+                    <div className=" mb-1 ml-2 pb-1">
                         <img src={rezoomex_logo}    style={{ height: '22px'}} />
                         </div>
                         <HeaderCenter hasuserLogin={this.props.hasuserLogin} />

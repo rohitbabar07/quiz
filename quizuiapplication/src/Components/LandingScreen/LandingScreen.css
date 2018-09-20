@@ -10,14 +10,17 @@
     margin-bottom: 25px;
     }
     .jdNameSize{
-    font-size: 25px;
-    background: -webkit-linear-gradient(#686fc7, #92e6ef);
+      
+    font-size: 24px;
+    background-image: -webkit-linear-gradient(45deg, #17EAD9 0%, #6078EA 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #45ccea80;
     }
     
     /* CSS for Create Quiz using question bank Btn */
-    
+    .descriptionStyle{
+        font-size: 18px;
+    }
     .createQuizBtnSize{
         width: 375.813px;
         height:38px;

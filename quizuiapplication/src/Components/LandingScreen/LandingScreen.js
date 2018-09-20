@@ -18,13 +18,12 @@ class LandingScreen extends Component {
     <img src={quiz} className="quizImage" alt="quiz logo" />
 </div>
 <div className="col-md-12 text-center marginEmptyMsgCheck">
-    <span className=""><b>Oops! its empty</b></span>
+    <span style={{fontSize:'18px'}}><b>Oops! its empty</b></span>
 </div>
 <div className="col-md-12 text-center marginEmptyMsgCheck">
-    <span><b className="jdNameSize">BU 6 Lead JAVA</b><br /><br />
-        This Job Description doesnt have Quiz yet.<br />
-        Create Quiz by clicking button below.
-    </span>
+    <span><b className="jdNameSize">BU 6 Lead JAVA</b></span><br /><br />
+    <span className="descriptionStyle">This Job Description doesnt have Quiz yet. </span><br />
+   < span className="descriptionStyle">Create Quiz by clicking button below.</span> 
 </div>
 </div>
 <div className="row">
