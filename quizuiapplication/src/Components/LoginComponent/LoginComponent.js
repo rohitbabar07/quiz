@@ -38,7 +38,7 @@ class LoginComponent extends React.Component {
             <div className="row" style={{ marginTop: 60 }}>
                 <div className="col-sm-4 offset-sm-4 text-center">
 
-                    <span className="textGradientStyle" style={{  fontWeight: 'bold', fontSize: 56, fontFamily: 'Nunito' }}>QUIZ</span>
+                    <span className="textGradientStyle" style={{ fontWeight: 'bold', fontSize: 56, fontFamily: 'Nunito' }}>QUIZ</span>
 
                     <div className="info-form" style={{ marginTop: 40 }}>
                         <form>
@@ -70,11 +70,11 @@ class LoginComponent extends React.Component {
                             <button type="submit"
                                 style={{ fontWeight: 'bold', marginTop: 10 }}
                                 className="btn login-btn btn-primary btn-block"
+                                disabled={(!this.state.userName) || (!this.state.passWord)}
                                 onClick={(event) => this.handleClick(event)}>
-                                {this.state.isloading && <i className="fa fa-spinner fa-spin"></i>}
+                                {(this.state.isloading && !this.props.error) && <i className="fa fa-spinner fa-spin"></i>}
                                 Login
                             </button>
-
                         </form>
                     </div>
                 </div>
