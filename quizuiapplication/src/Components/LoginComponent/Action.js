@@ -1,6 +1,6 @@
 import { generateToken } from '../../APIs/Login';
 import HttpStatus from 'http-status-codes';
-import { LOGIN_FAILED, LOGIN_SUCCESS, LOGIN_REQUEST } from '../../Constants/AppConstants';
+import { LOGIN_FAILED, LOGIN_SUCCESS, LOGIN_REQUEST,LOGOUT_REQUEST } from '../../Constants/AppConstants';
 import  {  fetchUserJd } from './GetJobs';
 
 
@@ -40,5 +40,10 @@ export function redirectUser(data) {
 export function loginRequest() {
     return {
         type: LOGIN_REQUEST
+    }
+}
+export function logoutUser(){
+    return {
+        type: LOGOUT_REQUEST
     }
 }

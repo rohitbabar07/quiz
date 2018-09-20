@@ -11,6 +11,7 @@ class SingInInstruction extends React.Component {
                         <span className="col-sm-12 mr-10" style={{ fontWeight: 'bold', fontSize: 16, textAlign: " center" }}> Sign in to </span>
                     </div>
                 )
+                
                 : (<JdInDropDown jobs={this.props.jobs} />
                 )
         return (

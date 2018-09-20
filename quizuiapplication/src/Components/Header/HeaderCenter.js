@@ -6,11 +6,9 @@ class HeaderCenter extends Component {
 
     render() {
         return (
-            true ?
-                <div >
-                    <Link className=" mb-1" to={`#`}>
-                        <img src={synerzip_logo} style={{ height: '32px', marginTop: '3px', marginLeft: "36px" }} />
-                    </Link>
+            this.props.hasuserLogin ?
+                <div className=" mb-1">  
+                        <img src={synerzip_logo}  style={{ height: '32px', marginLeft: "36px" }} />
                 </div>
                 : <div></div>
         )
