@@ -1,3 +1,38 @@
 .head{
     padding:0px;
 }
+/* CSS for show JD List. */
+.rez-header-row {
+    background-color: #F1F1F1;
+    /* border-top: 1px solid #C1BFC2;
+    border-bottom: 1px solid #C1BFC2; */
+  }
+ .jdAlignRigt{
+    text-align: right;
+  }
+  .jdLablePadd{
+    padding-right: 18px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .selectId {
+    color: #007bff;
+    border: 1px solid #bfb5b5;
+    background: #fff url('./arrow.png') right 5px center no-repeat;
+    background-size: 20px;
+    -webkit-appearance: none; 
+    width: 200px;
+    margin-top: 5px; 
+    padding: 0px 5px;
+    border-radius: 0px;
+  }
+  .jdSelectBoxMargin{
+    margin-top: 4px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    height: 27px;
+  }
+  .btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
