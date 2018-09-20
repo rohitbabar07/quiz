@@ -11,7 +11,7 @@ class HeaderRight extends Component {
     render() {
         return (
            this.props.hasuserLogin ? (<div className="mr-4">
-                <span style={{ marginRight: 10 }}>User</span>
+                <span style={{ marginRight: 10 }}>{localStorage.getItem('user')}</span>
                 <Link className="text-danger" to={'/'}>
                     <span onClick={ this.props.handleLogout}>Logout</span>
                 </Link>
