@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './Header.css';
+import { connect } from 'react-redux';
+import { jdNameChange } from '../LoginComponent/GetJobs';
 
-export default class JdInDropDown extends Component {
+class JdInDropDown extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             jobs: this.props.jobs
         }
-
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentWillReceiveProps(newProps) {
@@ -27,12 +29,15 @@ export default class JdInDropDown extends Component {
         }
         else {
             return jdList.content.map((jd) =>
-                <option key={jd.id} value={jd.id}>{jd.jdName} </option>
+                <option key={jd.id} value={jd.jdName}>{jd.jdName} </option>
 
             );
         }
     }
 
+    handleChange(e) {
+        this.props.jdNameChange(e.target.value);
+    }
     render() {
         return (
             <div className="row rez-header-row">
@@ -41,7 +46,7 @@ export default class JdInDropDown extends Component {
                 <div className="col-md-6 jdAlignRigt">
                     <span className="jdLablePadd">Job Description</span>
                     <span>
-                        <select value={this.state.jdName} id="selectJob" className="selectpicker btn btn-labeled btn-start selectId jdSelectBoxMargin ">
+                        <select value={this.state.jdName} onChange={this.handleChange} id="selectJob" className="selectpicker btn btn-labeled btn-start selectId jdSelectBoxMargin ">
                             <option disabled selected value>None Selected</option>
                             {this.listOfJd(this.state.jobs)}
                         </select>
@@ -51,4 +56,6 @@ export default class JdInDropDown extends Component {
         );
     }
 }
+
+export default connect(null, { jdNameChange })(JdInDropDown);
 

@@ -59,10 +59,10 @@ class LoginComponent extends React.Component {
 
                             <small className=" mb-1 mt-1"><Link to={`#`}>Forget Password?</Link></small>
                             <button type="submit"
-                                    style={{ fontWeight: 'bold', marginTop: 10 }}
-                                    className="btn btn-primary btn-block"
-                                    onClick={(event) => this.handleClick(event)}>
-                                    { <i class="fa fa-spinner fa-spin"></i> &&  this.props.clickedLogin}
+                                style={{ fontWeight: 'bold', marginTop: 10 }}
+                                className="btn btn-primary btn-block"
+                                onClick={(event) => this.handleClick(event)}>
+                                {<i class="fa fa-spinner fa-spin"></i> && this.props.clickedLogin}
                                 Login
                             </button>
 

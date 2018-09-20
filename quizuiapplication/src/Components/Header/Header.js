@@ -7,26 +7,27 @@ import HeaderCenter from './HeaderCenter';
 import SignInInstruction from './SingInInstruction';
 import { connect } from 'react-redux';
 import { logoutUser } from '../LoginComponent/Action';
+import { resetStateOfJdName } from '../LoginComponent/GetJobs';
 class Header extends Component {
     constructor(props) {
         super(props);
     }
-    handleLogout =()=>{
-        console.log('hi');
+    handleLogout = () => {
         this.props.logoutUser();
+        this.props.resetStateOfJdName();
     }
     render() {
         return (
             <div >
                 <div>
                     <nav className="navbar navbar-dark head" >
-                    <div className=" mb-1 ml-4 pb-1">
-                        <img src={rezoomex_logo}    style={{ height: '22px'}} />
+                        <div className=" mb-1 ml-4 pb-1">
+                            <img src={rezoomex_logo} style={{ height: '22px' }} />
                         </div>
                         <HeaderCenter hasuserLogin={this.props.hasuserLogin} />
-                        <HeaderRight 
-                        hasuserLogin={this.props.hasuserLogin}
-                        handleLogout={this.handleLogout}
+                        <HeaderRight
+                            hasuserLogin={this.props.hasuserLogin}
+                            handleLogout={this.handleLogout}
                         />
                     </nav>
 
@@ -39,14 +40,14 @@ class Header extends Component {
 
 function mapStateToProps(state) {
     return {
-        hasuserLogin :  state.LoginReducer.hasUserLogIn,
+        hasuserLogin: state.LoginReducer.hasUserLogIn,
         clickedLogout: state.LoginReducer.logoutRequest
     }
 }
-function mapDispatchToProps(dispatch) {
-    return {
-        logoutUser: () => dispatch(logoutUser())
-    }
-}
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         logoutUser: () => dispatch(logoutUser())
+//     }
+// }
 
-export default connect(mapStateToProps,mapDispatchToProps) (Header);
+export default connect(mapStateToProps, { logoutUser, resetStateOfJdName })(Header);

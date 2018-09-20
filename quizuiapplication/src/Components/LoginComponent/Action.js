@@ -1,7 +1,7 @@
 import { generateToken } from '../../APIs/Login';
 import HttpStatus from 'http-status-codes';
-import { LOGIN_FAILED, LOGIN_SUCCESS, LOGIN_REQUEST,LOGOUT_REQUEST } from '../../Constants/AppConstants';
-import  {  fetchUserJd } from './GetJobs';
+import { LOGIN_FAILED, LOGIN_SUCCESS, LOGIN_REQUEST, LOGOUT_REQUEST } from '../../Constants/AppConstants';
+import { fetchUserJd } from './GetJobs';
 
 
 export function fetchToken(bodyjson) {
@@ -15,7 +15,7 @@ export function getLoginDetails(dispatch, bodyjson) {
     generateToken(bodyjson)
         .then((response) => {
             if (response.status === 200) {
-                localStorage.setItem('user',bodyjson.username);
+                localStorage.setItem('user', bodyjson.username);
                 dispatch(sendToken(response.payload))
                 dispatch(fetchUserJd(response.payload.access_token));
             }
@@ -43,7 +43,7 @@ export function loginRequest() {
         type: LOGIN_REQUEST
     }
 }
-export function logoutUser(){
+export function logoutUser() {
     return {
         type: LOGOUT_REQUEST
     }
