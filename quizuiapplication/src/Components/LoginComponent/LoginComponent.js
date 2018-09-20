@@ -38,7 +38,7 @@ class LoginComponent extends React.Component {
             <div className="row" style={{ marginTop: 60 }}>
                 <div className="col-sm-4 offset-sm-4 text-center">
 
-                    <span className="textGradientStyle" style={{ color: '#320555', fontWeight: 'bold', fontSize: 56, fontFamily: 'Nunito' }}>QUIZ</span>
+                    <span className="textGradientStyle" style={{  fontWeight: 'bold', fontSize: 56, fontFamily: 'Nunito' }}>QUIZ</span>
 
                     <div className="info-form" style={{ marginTop: 40 }}>
                         <form>

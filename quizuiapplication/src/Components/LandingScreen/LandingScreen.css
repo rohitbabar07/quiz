@@ -13,7 +13,7 @@
     font-size: 25px;
     background: -webkit-linear-gradient(#686fc7, #92e6ef);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #45ccea80;
+    -webkit-text-fill-color: transparent;
     }
     
     /* CSS for Create Quiz using question bank Btn */
