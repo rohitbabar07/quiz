@@ -43,9 +43,9 @@ class LoginComponent extends React.Component {
                     <div className="info-form" style={{ marginTop: 40 }}>
                         <form>
                             {this.props.error && <ErrorComponent />}
-                            <div className="input-group border border-primary">
+                            <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-envelope-o fa-fw"></i></span>
+                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i class="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
                                 <input type="email"
                                     className="form-control"
@@ -55,9 +55,9 @@ class LoginComponent extends React.Component {
                                     onChange={(event, newValue) => this.setState({ userName: event.target.value })} />
                             </div>
 
-                            <div className="input-group border border-primary" style={{ marginTop: 32, marginBottom: 16 }}>
+                            <div className="input-group" style={{ marginTop: 32, marginBottom: 16 }}>
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-envelope-o fa-key"></i></span>
+                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-lock"></i></span>
                                 </div>
                                 <input type="password"
                                     className="form-control"
@@ -69,9 +69,9 @@ class LoginComponent extends React.Component {
                             <small className=" mb-1 mt-1"><Link to={`#`}>Forget Password?</Link></small>
                             <button type="submit"
                                 style={{ fontWeight: 'bold', marginTop: 10 }}
-                                className="btn btn-primary btn-block"
+                                className="btn login-btn btn-primary btn-block"
                                 onClick={(event) => this.handleClick(event)}>
-                                { this.state.isloading && <i class="fa fa-spinner fa-spin"></i>}
+                                {this.state.isloading && <i className="fa fa-spinner fa-spin"></i>}
                                 Login
                             </button>
 
