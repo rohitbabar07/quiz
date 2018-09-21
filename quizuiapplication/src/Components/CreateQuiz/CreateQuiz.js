@@ -23,7 +23,7 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight text-center ">1</div>
                         <div className="rowContent fontStyle borderRight">
                             <label type="text">Select Technology</label>
-                            <select value="" onChange="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
+                            <select value="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
                                 <option value="">None Selected</option>
                                 <option value="">Java </option>
                                 <option value="">Python </option>
@@ -32,14 +32,14 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight">
                             <div className="fontStyle">
                                 <span>Select Questions Type</span>
-                                <button type="button" class="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
-                                <button type="button" class="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
+                                <button type="button" className="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
+                                <button type="button" className="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
                             </div>
                         </div>
                         <div className="rowContent">
                             <div className="fontStyle">
                                 Number Of Questions
-                                <select value="" onChange="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
+                                <select value="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
                                     <option value="">01</option>
                                     <option value="">02</option>
                                 </select>
@@ -48,10 +48,10 @@ class CreateQuiz extends Component {
                     </div>
                     <div className="rowContent">
                         <span className="">
-                            <button type="button" class="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
+                            <button type="button" className="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
                         </span>
                         <span>
-                            <button type="button" class="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
+                            <button type="button" className="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
                         </span>
                     </div>
                 </div>
@@ -71,7 +71,7 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight text-center ">1</div>
                         <div className="rowContent fontStyle borderRight">
                             <label type="text">Select Technology</label>
-                            <select value="" onChange="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
+                            <select value="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
                                 <option value="">None Selected</option>
                                 <option value="">Java </option>
                                 <option value="">Python </option>
@@ -80,14 +80,14 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight">
                             <div className="fontStyle">
                                 <span>Select Questions Type</span>
-                                <button type="button" class="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
-                                <button type="button" class="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
+                                <button type="button" className="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
+                                <button type="button" className="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
                             </div>
                         </div>
                         <div className="rowContent">
                             <div className="fontStyle">
                                 Number Of Questions
-                                <select value="" onChange="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
+                                <select value="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
                                     <option value="">01</option>
                                     <option value="">02</option>
                                 </select>
@@ -96,10 +96,10 @@ class CreateQuiz extends Component {
                     </div>
                     <div className="rowContent">
                         <span className="">
-                            <button type="button" class="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
+                            <button type="button" className="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
                         </span>
                         <span>
-                            <button type="button" class="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
+                            <button type="button" className="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
                         </span>
                     </div>
                 </div>
@@ -119,7 +119,7 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight text-center ">1</div>
                         <div className="rowContent fontStyle borderRight">
                             <label type="text">Select Technology</label>
-                            <select value="" onChange="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
+                            <select value="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
                                 <option value="">None Selected</option>
                                 <option value="">Java </option>
                                 <option value="">Python </option>
@@ -128,14 +128,14 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight">
                             <div className="fontStyle">
                                 <span>Select Questions Type</span>
-                                <button type="button" class="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
-                                <button type="button" class="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
+                                <button type="button" className="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
+                                <button type="button" className="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
                             </div>
                         </div>
                         <div className="rowContent">
                             <div className="fontStyle">
                                 Number Of Questions
-                                <select value="" onChange="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
+                                <select value="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
                                     <option value="">01</option>
                                     <option value="">02</option>
                                 </select>
@@ -144,15 +144,15 @@ class CreateQuiz extends Component {
                     </div>
                     <div className="rowContent">
                         <span className="">
-                            <button type="button" class="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
+                            <button type="button" className="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
                         </span>
                         <span>
-                            <button type="button" class="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
+                            <button type="button" className="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
                         </span>
                     </div>
                 </div>
-                <div className="fetchBtnSize mx-auto">
-                    <button className="btn btn-primary">Fetch Questions</button>
+                <div className="fetchBtnDiv mx-auto">
+                    <button className="btn btn-primary fetchBtnSize">Fetch Questions</button>
                 </div>
             </div >
         );

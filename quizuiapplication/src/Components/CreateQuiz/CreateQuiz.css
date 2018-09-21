@@ -95,8 +95,10 @@
 .backgroundColorForHigher{
   background-color: #FF4500;
 }
-.fetchBtnSize{
+.fetchBtnDiv{
     text-align: center;
     margin-top: 16px;
-    width: 85%;
+}
+.fetchBtnSize{
+    width: 25%;
 }
