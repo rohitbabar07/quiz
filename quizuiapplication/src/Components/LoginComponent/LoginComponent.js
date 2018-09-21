@@ -45,7 +45,7 @@ class LoginComponent extends React.Component {
                             {this.props.error && <ErrorComponent />}
                             <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
                                 <input type="email"
                                     className="form-control"

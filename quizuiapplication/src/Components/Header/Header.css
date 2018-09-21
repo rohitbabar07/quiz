@@ -18,7 +18,7 @@
   .selectId {
     color: #007bff;
     border: 1px solid #bfb5b5;
-    background: #fff url('./arrow.png') right 5px center no-repeat;
+    background: #fff url('../../assets/images/arrow.png') right 5px center no-repeat;
     background-size: 20px;
     -webkit-appearance: none; 
     width: 200px;

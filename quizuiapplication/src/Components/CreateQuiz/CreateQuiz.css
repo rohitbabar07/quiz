@@ -1,0 +1,104 @@
+.questionRow {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #F0EEEE;
+    margin-left: 40px;
+  }
+  .borderRight{
+    border-right: 1px solid #bfb5b5;
+  }
+  .numberDropdown{
+    width: 50px !important;
+  }
+  .resetBtnColumn{
+    background-color: #fff;
+  }
+  .typeBtn {
+    width: 130px;
+  }
+  .btn-secondary {
+    background-color: #fff;
+    border: 1px solid #bfb5b5;
+    color: #000000;
+  }
+  .btn-secondary:hover {
+    background-color: #007bff;
+    border: 1px solid #bfb5b5;
+    color: #ffffff;
+  }
+  .btn:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+  .rowContent {
+    padding: 0em 1em 0em 1em;
+    margin: 0.5em 0;
+  }
+  .topMargn{
+      margin-top: 7px;
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+  .margin-left-10 {
+    margin-left: 10px;
+  }
+  .standard-btn-50 {
+    width: 5em !important;
+    border-radius: 2px;
+  }
+  .levelIndicationLabel {
+    padding-left: 10px;
+  }
+  .questionLevelIndication {
+    margin-top: 20px;
+  }
+  .levelIndicatorBtn {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  .backgroundColorForLow{
+      background-color: yellow;
+  }
+  .selectId {
+    color: #007bff;
+    border: 1px solid #bfb5b5;
+    background: #fff url('../../assets/images/arrow.png') right 5px center no-repeat;
+    background-size: 20px;
+    -webkit-appearance: none; 
+    width: 200px;
+    margin-top: 5px; 
+    padding: 0px 5px;
+  }
+  .fontStyle{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .techDrop{
+    font-size: 12px;
+    height: 27px;
+  }
+.quesSDrop{
+    font-size: 12px;
+    height: 27px;
+    width: 89px;
+  }
+.backgroundColorForLow{
+    background-color: yellow;
+}
+.backgroundColorForMedium{
+  background-color: #DAA520;
+}
+.backgroundColorForHigher{
+  background-color: #FF4500;
+}
+.fetchBtnDiv{
+    text-align: center;
+    margin-top: 16px;
+}
+.fetchBtnSize{
+    width: 25%;
+}
