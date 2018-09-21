@@ -11,7 +11,8 @@ class LoginComponent extends React.Component {
         super(props);
         this.state = {
             userName: '',
-            passWord: ''
+            passWord: '',
+            isloading: this.props.clickedLogin
         }
     }
 
@@ -24,19 +25,27 @@ class LoginComponent extends React.Component {
         this.props.fetchToken(bodyJson);
     }
 
+    componentWillReceiveProps(newProps) {
+        if (newProps.clickedLogin) {
+            this.setState({
+                isloading: newProps.clickedLogin
+            });
+        }
+    }
+
     render() {
         return (
             <div className="row" style={{ marginTop: 60 }}>
                 <div className="col-sm-4 offset-sm-4 text-center">
 
-                    <span className="textGradientStyle" style={{ color: '#320555', fontWeight: 'bold', fontSize: 56, fontFamily: 'Nunito' }}>QUIZ</span>
+                    <span className="textGradientStyle" style={{ fontWeight: 'bold', fontSize: 56, fontFamily: 'Nunito' }}>QUIZ</span>
 
                     <div className="info-form" style={{ marginTop: 40 }}>
                         <form>
                             {this.props.error && <ErrorComponent />}
-                            <div className="input-group border border-primary">
+                            <div className="input-group">
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-envelope-o fa-fw"></i></span>
+                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i class="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
                                 <input type="email"
                                     className="form-control"
@@ -46,9 +55,9 @@ class LoginComponent extends React.Component {
                                     onChange={(event, newValue) => this.setState({ userName: event.target.value })} />
                             </div>
 
-                            <div className="input-group border border-primary" style={{ marginTop: 32, marginBottom: 16 }}>
+                            <div className="input-group" style={{ marginTop: 32, marginBottom: 16 }}>
                                 <div className="input-group-prepend">
-                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-envelope-o fa-key"></i></span>
+                                    <span className="input-group-text" style={{ backgroundColor: 'white' }}><i className="fa fa-lock"></i></span>
                                 </div>
                                 <input type="password"
                                     className="form-control"
@@ -60,12 +69,12 @@ class LoginComponent extends React.Component {
                             <small className=" mb-1 mt-1"><Link to={`#`}>Forget Password?</Link></small>
                             <button type="submit"
                                 style={{ fontWeight: 'bold', marginTop: 10 }}
-                                className="btn btn-primary btn-block"
+                                className="btn login-btn btn-primary btn-block"
+                                disabled={(!this.state.userName) || (!this.state.passWord)}
                                 onClick={(event) => this.handleClick(event)}>
-                                {<i class="fa fa-spinner fa-spin"></i> && this.props.clickedLogin}
+                                {(this.state.isloading && !this.props.error) && <i className="fa fa-spinner fa-spin"></i>}
                                 Login
                             </button>
-
                         </form>
                     </div>
                 </div>

@@ -3,15 +3,7 @@
   outline: 0;
 }
 
-a:link,
-a:visited {
-  color: #222;
-}
 
-a:hover,
-a:focus {
-  color: orange;
-}
 
 .list-group-item span {
   border: solid #222;
@@ -36,3 +28,12 @@ a:focus {
   -webkit-transform: rotate(-140deg);
   transition: .3s transform ease-in-out;
 }
+
+.login-btn {
+    background-color : #4986E7
+}
+.textGradientStyle{
+     background: -webkit-linear-gradient(#686fc7, #92e6ef);
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+ }
