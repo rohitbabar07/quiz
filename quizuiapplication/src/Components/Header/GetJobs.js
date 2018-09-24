@@ -1,7 +1,6 @@
 import {
     FETCHING_JOBDESCRIPTION_SUCCESS, FETCHING_JOBDESCRIPTION_FAILED, FETCHING_STATUS, ON_JD_CHANGE,
-    RESET_STATE_OF_JDNAME
-} from '../../Constants/AppConstants?';
+    RESET_STATE_OF_JDNAME } from '../../Constants/AppConstants';
 import { getUserJobs } from '../../APIs/GetUserJd';
 import history from '../../history';
 
