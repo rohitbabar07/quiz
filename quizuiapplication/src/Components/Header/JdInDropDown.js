@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Header.css';
 import { connect } from 'react-redux';
-import { jdNameChange } from '../LoginComponent/GetJobs';
+import { jdNameChange } from './GetJobs';
 
 class JdInDropDown extends Component {
 

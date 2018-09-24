@@ -1,7 +1,7 @@
 import { generateToken } from '../../APIs/Login';
 import HttpStatus from 'http-status-codes';
 import { LOGIN_FAILED, LOGIN_SUCCESS, LOGIN_REQUEST, LOGOUT_REQUEST } from '../../Constants/AppConstants';
-import { fetchUserJd } from './GetJobs';
+import { fetchUserJd } from '../Header/GetJobs';
 
 
 export function fetchToken(bodyjson) {

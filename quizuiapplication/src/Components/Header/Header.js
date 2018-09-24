@@ -7,7 +7,7 @@ import HeaderCenter from './HeaderCenter';
 import SignInInstruction from './SingInInstruction';
 import { connect } from 'react-redux';
 import { logoutUser } from '../LoginComponent/Action';
-import { resetStateOfJdName } from '../LoginComponent/GetJobs';
+import { resetStateOfJdName } from './GetJobs';
 class Header extends Component {
     constructor(props) {
         super(props);

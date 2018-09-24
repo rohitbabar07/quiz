@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Redirect } from 'react-router';
 import LoginComponent from '../../Components/LoginComponent/LoginComponent';
 import { LOGIN_REDIRECT_URL } from './../../Constants/AppConstants';
-import Temp from '../../Components/Temp';
+import RedirectRoute from '../../Components/RouterComponent/RedirectRoute';
 import Loading from '../../Components/Loader/Loading';
-import NotFound from '../../Components/NotFound';
+import LandingScreen from '../../Components/LandingScreen/LandingScreen';
 import { connect } from 'react-redux';
 
 
@@ -29,8 +29,8 @@ class Main extends React.Component {
                         ? <Loading />
                     :(
                         (this.props.hasUserLogIn)
-                         ? <Temp />
-                         :<NotFound/>
+                         ? <RedirectRoute />
+                         :<LandingScreen/>
                     )
                 )
 
