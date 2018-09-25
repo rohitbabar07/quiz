@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, withRouter, Switch, Router} from 'react-router-dom';
+import { Route, withRouter, Switch, Router } from 'react-router-dom';
 import LandingScreen from '../LandingScreen/LandingScreen';
 import history from '../../history';
-import CreateQuiz from '../CreateQuiz/CreateQuiz';
+import QuizSetupMain from '../CreateQuiz/QuizSetupMain';
 class RedirectRoute extends React.Component {
     render() {
         return (
@@ -10,7 +10,7 @@ class RedirectRoute extends React.Component {
                 <Router history={history} >
                     <Switch>
                         <Route exact path="/jobs" component={LandingScreen} />
-                        <Route exact path="/createQuiz" component={CreateQuiz}/>
+                        <Route exact path="/QuizSetupMain" component={QuizSetupMain} />
                     </Switch>
                 </Router>
             </div>
