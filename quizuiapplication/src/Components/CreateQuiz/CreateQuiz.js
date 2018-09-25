@@ -1,9 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './CreateQuiz.css';
-class CreateQuiz extends Component {
+import Select from './CreateSelectOption';
+import { connect } from 'react-redux';
+
+class CreateQuiz extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            technologies: this.props.technologies
+        }
     }
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.technologies.length > 0) {
+            this.setState({
+                technologies: newProps.technologies
+            })
+        }
+    }
+
     render() {
         return (
 
@@ -23,10 +38,9 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight text-center ">1</div>
                         <div className="rowContent fontStyle borderRight">
                             <label type="text">Select Technology</label>
-                            <select value="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
-                                <option value="">None Selected</option>
-                                <option value="">Java </option>
-                                <option value="">Python </option>
+                            <select className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
+                                <option disabled selected value>None Selected</option>
+                                {this.state.technologies.length > 0 && <Select techData={this.state.technologies} />}
                             </select>
                         </div>
                         <div className="rowContent borderRight">
@@ -39,7 +53,7 @@ class CreateQuiz extends Component {
                         <div className="rowContent">
                             <div className="fontStyle">
                                 Number Of Questions
-                                <select value="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
+                                <select className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
                                     <option value="">01</option>
                                     <option value="">02</option>
                                 </select>
@@ -71,10 +85,9 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight text-center ">1</div>
                         <div className="rowContent fontStyle borderRight">
                             <label type="text">Select Technology</label>
-                            <select value="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
-                                <option value="">None Selected</option>
-                                <option value="">Java </option>
-                                <option value="">Python </option>
+                            <select className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
+                                <option disabled selected value>None Selected</option>
+                                {this.state.technologies.length > 0 && <Select techData={this.state.technologies} />}
                             </select>
                         </div>
                         <div className="rowContent borderRight">
@@ -87,7 +100,7 @@ class CreateQuiz extends Component {
                         <div className="rowContent">
                             <div className="fontStyle">
                                 Number Of Questions
-                                <select value="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
+                               <select className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
                                     <option value="">01</option>
                                     <option value="">02</option>
                                 </select>
@@ -119,10 +132,9 @@ class CreateQuiz extends Component {
                         <div className="rowContent borderRight text-center ">1</div>
                         <div className="rowContent fontStyle borderRight">
                             <label type="text">Select Technology</label>
-                            <select value="" className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
-                                <option value="">None Selected</option>
-                                <option value="">Java </option>
-                                <option value="">Python </option>
+                            <select className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
+                                <option disabled selected value>None Selected</option>
+                                {this.state.technologies.length > 0 && <Select techData={this.state.technologies} />}
                             </select>
                         </div>
                         <div className="rowContent borderRight">
@@ -135,7 +147,7 @@ class CreateQuiz extends Component {
                         <div className="rowContent">
                             <div className="fontStyle">
                                 Number Of Questions
-                                <select value="" className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
+                                <select className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
                                     <option value="">01</option>
                                     <option value="">02</option>
                                 </select>
@@ -159,4 +171,13 @@ class CreateQuiz extends Component {
     }
 }
 
-export default CreateQuiz;
+
+function mapStateToProps(state) {
+    return {
+        technologies: state.Technologies.response
+    }
+}
+
+
+
+export default connect(mapStateToProps, null)(CreateQuiz);

@@ -1,19 +1,19 @@
-
 import React, { Component } from 'react';
 import './LandingScreen.css';
 import quiz from '../../assets/images/quiz.png';
 import history from '../../history';
 import { connect } from 'react-redux';
+import { fetchTechnology } from '../CreateQuiz/FetchTechnologiesAction';
+
 
 class LandingScreen extends Component {
     constructor(props) {
         super(props);
     }
     createQuestionBankQuiz = () => {
-        history.push('/createQuiz');
+        this.props.fetchTechnology(this.props.token);
     }
     render() {
-
         const displayJdName = this.props.isJdSelected ? (
             <span className="jdNameSize">{this.props.selectedJdName}</span>
         ) : (
@@ -62,13 +62,21 @@ class LandingScreen extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
         isJdSelected: state.UserJobs.isJdSelected,
-        selectedJdName: state.UserJobs.selectedJdName
+        selectedJdName: state.UserJobs.selectedJdName,
+        token : state.LoginReducer.response.access_token
     }
 }
 
-export default connect(mapStateToProps)(LandingScreen);
+function mapDispatchToProps(dispatch) {
+    return {
+        fetchTechnology: (token) => dispatch(fetchTechnology(token)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingScreen);
 
 
 
