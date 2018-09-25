@@ -1,5 +1,5 @@
 import {
-    FETCHING_JOBDESCRIPTION_SUCCESS, FETCHING_JOBDESCRIPTION_FAILED, FETCHING_STATUS, ON_JD_CHANGE,
+    FETCHING_JOBDESCRIPTION_SUCCESS, FETCHING_JOBDESCRIPTION_FAILED, FETCHING_STATUS_FALSE, ON_JD_CHANGE,
     RESET_STATE_OF_JDNAME } from '../../Constants/AppConstants';
 import { getUserJobs } from '../../APIs/GetUserJd';
 import history from '../../history';
@@ -39,7 +39,7 @@ export function sendUserJd(data, dispatch) {
 
 export function setFlag(data) {
     return {
-        type: FETCHING_STATUS,
+        type: FETCHING_STATUS_FALSE,
     }
 }
 

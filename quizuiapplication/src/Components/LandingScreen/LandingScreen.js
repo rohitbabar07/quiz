@@ -1,6 +1,6 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchTechnology } from '../CreateQuiz/FetchTechnologiesAction';
 import { QuizNotAvailableMsg } from './QuizNotAvailableMsg';
 import { LandingImage } from './LandingImage';
 import { SelectJdInfoComponent } from './SelectJdInfoComponent';
@@ -8,6 +8,9 @@ import { SelectJdInfoComponent } from './SelectJdInfoComponent';
 class LandingScreen extends Component {
     constructor(props) {
         super(props);
+    }
+    createQuestionBankQuiz = () => {
+        this.props.fetchTechnology(this.props.token);
     }
     render() {
         const displayQuizNotAvailableMsgComponent = this.props.isJdSelected ? (
@@ -25,13 +28,21 @@ class LandingScreen extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
         isJdSelected: state.UserJobs.isJdSelected,
-        selectedJdName: state.UserJobs.selectedJdName
+        selectedJdName: state.UserJobs.selectedJdName,
+        token : state.LoginReducer.response.access_token
     }
 }
 
-export default connect(mapStateToProps)(LandingScreen);
+function mapDispatchToProps(dispatch) {
+    return {
+        fetchTechnology: (token) => dispatch(fetchTechnology(token)),
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingScreen);
 
 
 

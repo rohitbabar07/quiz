@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAILED,LOGIN_REQUEST,LOGOUT_REQUEST , FETCHING_JOBDESCRIPTION_SUCCESS, FETCHING_STATUS} from '../Constants/AppConstants';
+import { LOGIN_SUCCESS, LOGIN_FAILED, FETCH_TECHNOLOGY_REQUEST, LOGIN_REQUEST, LOGOUT_REQUEST, FETCHING_JOBDESCRIPTION_SUCCESS, FETCHING_STATUS_FALSE, FETCHING_STATUS_TRUE } from '../Constants/AppConstants';
 
 const initialState = {
     response: [],
@@ -32,16 +32,21 @@ export default function MainReducer(state = initialState, action) {
             return {
                 loginRequest: true
             }
-         case FETCHING_STATUS: 
+        case FETCHING_STATUS_FALSE:
             return {
                 ...state,
                 isFetching: false
-            }   
-           
-            case LOGOUT_REQUEST: 
+            }
+
+        case LOGOUT_REQUEST:
             return {
                 hasUserLogIn: false
-            }  
+            }
+        case FETCHING_STATUS_TRUE:
+            return {
+                ...state,
+                isFetching: true
+            }
         default:
             return state
     }
