@@ -18,6 +18,11 @@
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     }
+    .selectJdMsg{
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 25px;
+    }
     
     /* CSS for Create Quiz using question bank Btn */
     
