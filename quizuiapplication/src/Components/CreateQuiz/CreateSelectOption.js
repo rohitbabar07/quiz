@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class CreateSelectOption extends React.Component {
+class CreateSelectOption extends React.Component {
 
     constructor(props) {
         super(props);
@@ -27,3 +27,5 @@ export default class CreateSelectOption extends React.Component {
 
 
 }
+
+export default CreateSelectOption;

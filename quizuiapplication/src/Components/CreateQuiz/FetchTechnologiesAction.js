@@ -1,7 +1,7 @@
 import { getTechnologiesData } from '../../APIs/GetTechnologies';
 import HttpStatus from 'http-status-codes';
 import history from '../../history';
-import { FETCH_TECHNOLOGY_REQUEST, FETCHING_TECHNOLOGY_SUCCESS, FETCHING_STATUS_FALSE, FAILED_TEHNOLOGY_FETCHING, FETCHING_STATUS_TRUE} from '../../Constants/AppConstants';
+import { FETCH_TECHNOLOGY_REQUEST, FETCHING_TECHNOLOGY_SUCCESS, FETCHING_STATUS_FALSE, FAILED_TEHNOLOGY_FETCHING, FETCHING_STATUS_TRUE } from '../../Constants/AppConstants';
 
 export function fetchTechnology(token) {
     return (dispatch) => {
@@ -24,7 +24,7 @@ export function getTechnologies(dispatch, token) {
 
 export function sendTechData(data, dispatch) {
     dispatch(setFlag());
-    history.push('/createQuiz');
+    history.push('/QuizSetupMain');
     return {
         type: FETCHING_TECHNOLOGY_SUCCESS,
         data: data,
