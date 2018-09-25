@@ -6,10 +6,7 @@ export class QuizNotAvailableMsg extends Component {
     constructor(props) {
         super(props);
     }
-    createQuestionBankQuiz = () => {
-        history.push('/createQuiz');
-    }
-
+    
     render() {
         return (
             <div>
@@ -26,7 +23,7 @@ export class QuizNotAvailableMsg extends Component {
                 <div className="row">
                     <div className="col-md-12 text-center ">
                         <span className="">
-                            <button type="submit" className="btn btn-primary createQuizBtnSize" onClick={this.createQuestionBankQuiz}>Create New Quiz using question bank</button>
+                            <button type="submit" className="btn btn-primary createQuizBtnSize" onClick={this.props.fetchTechnology}>Create New Quiz using question bank</button>
                         </span>
                     </div>
                 </div>

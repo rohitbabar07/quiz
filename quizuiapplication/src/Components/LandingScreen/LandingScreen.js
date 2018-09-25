@@ -8,13 +8,14 @@ import { SelectJdInfoComponent } from './SelectJdInfoComponent';
 class LandingScreen extends Component {
     constructor(props) {
         super(props);
+
     }
     createQuestionBankQuiz = () => {
         this.props.fetchTechnology(this.props.token);
     }
     render() {
         const displayQuizNotAvailableMsgComponent = this.props.isJdSelected ? (
-            <QuizNotAvailableMsg jdName={this.props.selectedJdName} />
+            <QuizNotAvailableMsg jdName={this.props.selectedJdName} fetchTechnology={this.createQuestionBankQuiz.bind(this)} />
         ) : (
                 <SelectJdInfoComponent />
             )
@@ -28,11 +29,10 @@ class LandingScreen extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         isJdSelected: state.UserJobs.isJdSelected,
         selectedJdName: state.UserJobs.selectedJdName,
-        token : state.LoginReducer.response.access_token
+        token: state.LoginReducer.response.access_token
     }
 }
 
