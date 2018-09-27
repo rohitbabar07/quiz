@@ -2,12 +2,14 @@ import { combineReducers } from 'redux';
 import LoginReducer from './MainReducer';
 import UserJobs from './UserJobs';
 import Technologies from './Technologies';
-import QuizData from './QuizDataReducer';
+import QuizData from './LowLevelDataReducer';
+import MediumQuizData from './MediumLevelDataReducer';
 
 const rootReducer = combineReducers({
   LoginReducer,
   UserJobs,
   Technologies,
-  QuizData
+  QuizData,
+  MediumQuizData
 });
 export default rootReducer
