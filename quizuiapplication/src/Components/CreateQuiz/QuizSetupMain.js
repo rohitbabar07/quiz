@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { LowLevelCriteria } from './QuizSetupComponent/LowLevelCriteria';
 import { MidLevelCriteria } from './QuizSetupComponent/MidLevelCriteria';
 import { HighLevelCriteria } from './QuizSetupComponent/HighLevelCriteria';
-
+import QuizInstructions from '../Header/QuizInstructions';
+import history from '../../history';
 class QuizSetupMain extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +26,7 @@ class QuizSetupMain extends React.Component {
         return (
 
             <div >
+                <QuizInstructions />
                 {/* -------------------low level difficulty criteria--------------------------- */}
 
                 <LowLevelCriteria techData={this.state.technologies} />
@@ -38,7 +40,7 @@ class QuizSetupMain extends React.Component {
                 <HighLevelCriteria techData={this.state.technologies} />
 
                 <div className="fetchBtnDiv mx-auto">
-                    <button className="btn btn-primary fetchBtnSize">Fetch Questions</button>
+                    <button className="btn btn-primary fetchBtnSize" onClick={()=>history.push("FetchedQuestionComponent")}>Fetch Questions</button>
                 </div>
 
             </div >
