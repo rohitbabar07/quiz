@@ -1,22 +1,65 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import '../CreateQuiz.css';
-import Select from '../CreateSelectOption';
+import HighRow from './HighRow';
+import { connect } from 'react-redux';
+import { updateHighLevel, addNewHighTech, removeHighTech } from '../UpdateHighLevelAction';
 
-export class HighLevelCriteria extends Component {
+
+class HighLevelCriteria extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            technologies: this.props.techData
+            technologies: this.props.techData,
+            highData: this.props.lowData.High
         }
     }
 
-    componentWillReceiveProps(newProps) {
-        if (newProps.techData.length > 0) {
-            this.setState({
-                technologies: newProps.techData
-            })
+    onchange(event, tobeupdated, id) {
+        const newData = this.props.lowData;
+        console.log('higher data', newData);
+        if (newData !== undefined) {
+            return newData.High.map((object, index) => {
+                if (object.id === id) {
+                    object[tobeupdated] = event.target.value;
+                }
+                this.props.updateHighLevel(newData.High);
+            });
         }
+    }
+
+
+    onaddRow(e, id) {
+        var previous_data = this.props.lowData;
+        var i = 0;
+        var maximum = Math.max.apply(Math, previous_data.High.map(function (obj) {
+            var regex = /\d+/g;
+            var id = obj.id;
+            var matches = id.match(regex);
+            return parseInt(matches[0]);
+        }));
+
+        previous_data.High.map((object) => {
+            i = i + parseInt(object.numberOfQuestions);
+        });
+        var regex = /\d+/g;
+        var matches = id.match(regex);
+        id = maximum + 1;
+        const tempObj = {
+            id: 'M' + id,
+            technologyId: 0,
+            technology: '',
+            type: '',
+            numberOfQuestions: ''
+        }
+        const addData = [...this.props.lowData.High, tempObj];
+        this.props.addNewHighTech(addData);
+    }
+
+    onRemoveRow(e, id) {
+        var previous_data = this.props.lowData;
+        const newArr = previous_data.High.filter(item => item.id !== id);
+        this.props.removeHighTech(newArr);
     }
 
     render() {
@@ -30,45 +73,27 @@ export class HighLevelCriteria extends Component {
                         Higher Difficulty Level - Maximum 7 questions
                     </label>
                 </div>
-                <div className="row topMargn">
-                    <div className="questionRow">
-                        <div className="rowContent borderRight text-center ">1</div>
-                        <div className="rowContent fontStyle borderRight">
-                            <label type="text">Select Technology</label>
-                            <select className="selectpicker btn btn-labeled btn-start selectId techDrop  margin-left-10">
-                                <option disabled selected value>None Selected</option>
-                                {this.state.technologies.length > 0 && <Select techData={this.state.technologies} />}
-                            </select>
-                        </div>
-                        <div className="rowContent borderRight">
-                            <div className="fontStyle">
-                                <span>Select Questions Type</span>
-                                <button type="button" className="btn btn-primary btn-sm margin-left-10 typeBtn">some Type</button>
-                                <button type="button" className="btn btn-secondary btn-sm margin-left-10 typeBtn">Nothing Type</button>
-                            </div>
-                        </div>
-                        <div className="rowContent">
-                            <div className="fontStyle">
-                                Number Of Questions
-                                <select className="numberDropdown selectpicker btn btn-labeled btn-start selectId quesSDrop margin-left-10">
-                                    <option value="">01</option>
-                                    <option value="">02</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rowContent">
-                        <span className="">
-                            <button type="button" className="btn btn-outline-primary btn-sm standard-btn-50">Reset</button>
-                        </span>
-                        <span>
-                            <button type="button" className="btn btn-primary btn-sm standard-btn-50 margin-left-10">+</button>
-                        </span>
-                    </div>
-                </div>
+                {(this.props.lowData) && this.props.lowData.High.length > 0 && this.props.lowData.High.map(data => (
+                    <HighRow technologies={this.state.technologies} onChange={this.onchange.bind(this)} data={data} key={data.id} onAddRow={this.onaddRow.bind(this)} onRemoveRow={this.onRemoveRow.bind(this)} />
+                ))}
             </div>
         )
     }
 }
 
-export default HighLevelCriteria
+function mapStateToProps(state) {
+    console.log("updated higher", state);
+    return {
+        lowData: state.HighQuizData
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        updateHighLevel: (lowLevel) => dispatch(updateHighLevel(lowLevel)),
+        addNewHighTech: (addData) => dispatch(addNewHighTech(addData)),
+        removeHighTech: (newArr) => dispatch(removeHighTech(newArr))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HighLevelCriteria);
