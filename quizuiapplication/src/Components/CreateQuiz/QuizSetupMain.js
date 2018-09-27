@@ -1,7 +1,7 @@
 import React from 'react';
 import './CreateQuiz.css';
 import { connect } from 'react-redux';
-import { LowLevelCriteria } from './QuizSetupComponent/LowLevelCriteria';
+import  LowLevelCriteria  from './QuizSetupComponent/LowLevelCriteria';
 import { MidLevelCriteria } from './QuizSetupComponent/MidLevelCriteria';
 import { HighLevelCriteria } from './QuizSetupComponent/HighLevelCriteria';
 
@@ -14,6 +14,7 @@ class QuizSetupMain extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
+        console.log("QuizSetUp", newProps);
         if (newProps.technologies.length > 0) {
             this.setState({
                 technologies: newProps.technologies
@@ -27,15 +28,15 @@ class QuizSetupMain extends React.Component {
             <div >
                 {/* -------------------low level difficulty criteria--------------------------- */}
 
-                <LowLevelCriteria techData={this.state.technologies} />
+                 {  this.state.technologies.length > 0  ? <LowLevelCriteria techData={this.state.technologies} /> : null }
 
                 {/* -------------------------Medium level difficulty criteria---------------------------- */}
 
-                <MidLevelCriteria techData={this.state.technologies} />
+                {/*<MidLevelCriteria techData={this.state.technologies} />*/}
 
                 {/* ----------------High level difficulty criteria-------------------------- */}
 
-                <HighLevelCriteria techData={this.state.technologies} />
+                {/*<HighLevelCriteria techData={this.state.technologies} />*/}
 
                 <div className="fetchBtnDiv mx-auto">
                     <button className="btn btn-primary fetchBtnSize">Fetch Questions</button>
@@ -48,6 +49,7 @@ class QuizSetupMain extends React.Component {
 
 
 function mapStateToProps(state) {
+    console.log("state", state);
     return {
         technologies: state.Technologies.response
     }

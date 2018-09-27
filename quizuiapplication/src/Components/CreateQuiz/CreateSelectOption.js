@@ -5,8 +5,10 @@ class CreateSelectOption extends React.Component {
 
     constructor(props) {
         super(props);
+        console.log("onchanmge", props);
         this.state = {
-            technologies: this.props.techData
+            technologies: this.props.techData,
+            selected:this.props.options
         }
     }
 
@@ -21,7 +23,7 @@ class CreateSelectOption extends React.Component {
     render() {
 
         return this.state.technologies.map((item) =>
-            <option key={item.id} value={item.name} >{item.name}</option>
+            <option key={item.id} value={this.state.selected} >{item.name}</option>
         );
     }
 
