@@ -1,6 +1,5 @@
 import React from 'react';
 import '../CreateQuiz.css';
-import Select from '../CreateSelectOption';
 import MidRow from './MidRow';
 import { connect } from 'react-redux';
 import { updateMidLevel, addNewMidTech, removeMidTech } from '../UpdateMidLevelAction';
@@ -17,7 +16,7 @@ class LowLevelCriteria extends React.Component {
 
     onchange(event, tobeupdated, id) {
         const newData = this.props.lowData;
-        console.log(newData);
+        // console.log(newData);
         if (newData !== undefined) {
             return newData.Medium.map((object, index) => {
                 if (object.id === id) {
@@ -83,7 +82,7 @@ class LowLevelCriteria extends React.Component {
 }
 
 function mapStateToProps(state) {
-    console.log("updated", state);
+    // console.log("updated", state);
     return {
         lowData: state.MediumQuizData
     }

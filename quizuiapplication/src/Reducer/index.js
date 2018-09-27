@@ -4,12 +4,14 @@ import UserJobs from './UserJobs';
 import Technologies from './Technologies';
 import QuizData from './LowLevelDataReducer';
 import MediumQuizData from './MediumLevelDataReducer';
+import HighQuizData from './HighLevelDataReducer';
 
 const rootReducer = combineReducers({
   LoginReducer,
   UserJobs,
   Technologies,
   QuizData,
-  MediumQuizData
+  MediumQuizData,
+  HighQuizData
 });
 export default rootReducer

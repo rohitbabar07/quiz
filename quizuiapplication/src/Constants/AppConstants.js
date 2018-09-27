@@ -23,3 +23,6 @@ export const REMOVE_TECH = 'REMOVE_TECH';
 export const QUIZ_DATA_MID = 'QUIZ_DATA_MID';
 export const ADD_NEW_MID = 'ADD_NEW_MID';
 export const REMOVE_TECH_MID = 'REMOVE_TECH_MID';
+export const QUIZ_DATA_HIGH = 'QUIZ_DATA_HIGH';
+export const ADD_NEW_HIGH = 'ADD_NEW_HIGH';
+export const REMOVE_TECH_HIGH = 'REMOVE_TECH_HIGH';
