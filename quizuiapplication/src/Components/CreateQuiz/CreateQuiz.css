@@ -8,7 +8,7 @@
     border-right: 1px solid #bfb5b5;
   }
   .numberDropdown{
-    width: 50px !important;
+    width: 60px !important;
   }
   .resetBtnColumn{
     background-color: #fff;
@@ -84,7 +84,7 @@
 .quesSDrop{
     font-size: 12px;
     height: 27px;
-    width: 89px;
+    width: 60px;
   }
 .backgroundColorForLow{
     background-color: yellow;
