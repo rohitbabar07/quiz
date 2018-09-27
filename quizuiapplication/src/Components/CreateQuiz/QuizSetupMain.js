@@ -2,7 +2,7 @@ import React from 'react';
 import './CreateQuiz.css';
 import { connect } from 'react-redux';
 import  LowLevelCriteria  from './QuizSetupComponent/LowLevelCriteria';
-import { MidLevelCriteria } from './QuizSetupComponent/MidLevelCriteria';
+import  MidLevelCriteria  from './QuizSetupComponent/MidLevelCriteria';
 import { HighLevelCriteria } from './QuizSetupComponent/HighLevelCriteria';
 
 class QuizSetupMain extends React.Component {
@@ -32,7 +32,7 @@ class QuizSetupMain extends React.Component {
 
                 {/* -------------------------Medium level difficulty criteria---------------------------- */}
 
-                {/*<MidLevelCriteria techData={this.state.technologies} />*/}
+                {  this.state.technologies.length > 0  ? <MidLevelCriteria techData={this.state.technologies} /> : null }
 
                 {/* ----------------High level difficulty criteria-------------------------- */}
 

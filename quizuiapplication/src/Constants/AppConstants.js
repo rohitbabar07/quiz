@@ -20,3 +20,6 @@ export const FAILED_TEHNOLOGY_FETCHING = 'FAILED_TEHNOLOGY_FETCHING';
 export const QUIZ_DATA = 'QUIZ_DATA';
 export const ADD_NEW = 'ADD_NEW';
 export const REMOVE_TECH = 'REMOVE_TECH';
+export const QUIZ_DATA_MID = 'QUIZ_DATA_MID';
+export const ADD_NEW_MID = 'ADD_NEW_MID';
+export const REMOVE_TECH_MID = 'REMOVE_TECH_MID';
