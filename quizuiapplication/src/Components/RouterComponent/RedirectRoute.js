@@ -3,6 +3,7 @@ import { Route, withRouter, Switch, Router } from 'react-router-dom';
 import LandingScreen from '../LandingScreen/LandingScreen';
 import history from '../../history';
 import QuizSetupMain from '../CreateQuiz/QuizSetupMain';
+import FetchedQuestionComponent from '../FetchedQuestions/FetchedQuestionComponent';
 class RedirectRoute extends React.Component {
     render() {
         return (
@@ -11,6 +12,7 @@ class RedirectRoute extends React.Component {
                     <Switch>
                         <Route exact path="/jobs" component={LandingScreen} />
                         <Route exact path="/QuizSetupMain" component={QuizSetupMain} />
+                        <Route exact path="/FetchedQuestionComponent" component={FetchedQuestionComponent} />
                     </Switch>
                 </Router>
             </div>

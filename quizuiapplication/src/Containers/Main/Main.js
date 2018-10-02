@@ -6,6 +6,7 @@ import RedirectRoute from '../../Components/RouterComponent/RedirectRoute';
 import Loading from '../../Components/Loader/Loading';
 import LandingScreen from '../../Components/LandingScreen/LandingScreen';
 import { connect } from 'react-redux';
+import FetchedQuestionComponent from '../../Components/FetchedQuestions/FetchedQuestionComponent';
 
 
 class Main extends React.Component {
